@@ -1,9 +1,7 @@
 ## project
-project1/secret.json
-project1/__pycache__/
-project1/**/node_modules
-project1/**/package-lock.json
-project1/**/ca*
-project1/**/cert*
-project1/**/ko_drink
-project1/**/config/
+secret.json
+python/__pycache__/
+node/node_modules
+node/**/package-lock.json
+node/ko_drink
+node/config/
