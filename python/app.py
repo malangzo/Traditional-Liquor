@@ -78,14 +78,14 @@ async def get_one_drinks(ID: str):
 async def logadd(id: int = None, food: str = None):
     record = session.query(Searchlog).filter(Searchlog.drink_id == id, Searchlog.food == food).first()
     if record is None:
-        # 레코드가 없으면 새로운 레코드를 생성합니다.
+        # 레코드가 없으면 새로운 레코드를 생성
         new_record = Searchlog(drink_id=id, food=food, count=1)
         session.add(new_record)
     else: 
-        # 레코드가 이미 있으면 COUNT 값을 1 증가시킵니다.
+        # 레코드가 이미 있으면 COUNT 값을 1 증가
         record.count += 1
     session.commit()
-    # 모든 레코드를 반환합니다.
+    # 모든 레코드를 반환
     result = session.query(Searchlog).all()
     return {"status": "200",
             "counts" : result }
